@@ -1,0 +1,52 @@
+<fieldset>
+  <%= form_for @movement do |f| %>
+    <% if @movement.errors.any? %>
+      <div id="error_explanation" class="alert-message block-message error">
+        <% @movement.errors.full_messages.each do |msg| %>
+          <p>
+            <strong>
+              * <%= msg %>
+            </strong>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="clearfix">
+      <%= f.label :flow %>
+      <div class="input">
+      <!--
+        <button class="btn success">Entrada</button>
+        <button class="btn error disabled">Saída</button>
+      -->
+        <%= f.select :flow, options_for_select(Movement::FLOWS), :class => 'xlarge' %>
+      </div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :date %>
+      <div class="input">
+        <%= f.text_field :date, :class => 'xlarge' %>
+      </div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :value %>
+      <div class="input">
+        <%= f.text_field :value, :class => 'xlarge currency' %>
+      </div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :account_id %>
+      <div class="input">
+        <%= f.select :account_id, options_from_collection_for_select(Account.all, "id", "name"), :class => 'xlarge' %>
+      </div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :observation %>
+      <div class="input">
+        <%= f.text_area :observation, :class => 'xlarge', :rows => 6 %>
+      </div>
+    </div>
+    <div class="actions">
+      <input type="submit" class="btn primary" value="Criar Movimento">
+    </div>
+  <% end %>
+</fieldset>

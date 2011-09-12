@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1>Editando Conta</h1>
+</div>
+
+<fieldset>
+  <%= form_for @account do |f| %>
+  <div class="clearfix">
+    <%= f.label :name %>
+    <div class="input">
+      <%= f.text_field :name, :class => 'xlarge' %><br />
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :opening_balance %>
+    <div class="input">
+      <%= f.text_field :opening_balance, :class => 'xlarge' %><br />
+    </div>
+  </div>
+  <div class="actions">
+    <input type="submit" class="btn primary" value="Criar Conta">
+  </div>
+  <% end %>
+</fieldset>

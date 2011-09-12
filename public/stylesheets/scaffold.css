@@ -1,0 +1,18 @@
+#container{
+  margin-top: 60px;
+}
+
+.box_value_home {
+  float: left;
+  margin-right: 20px;
+}
+
+.value_incoming {
+  color: #5ebc5e;
+  font-size: 18px;
+}
+
+.value_outcoming {
+  color: #e25550;
+  font-size: 18px;
+}

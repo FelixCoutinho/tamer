@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h1>Movimentações</h1>
+</div>
+<% if not notice.nil? %>
+<div class="alert-message block-message success">
+  <p>
+    <strong>
+      <%= notice %>
+    </strong>
+  </p>
+</div>
+<% end %>
+
+<div class="well">
+  <%= link_to 'Adicionar', new_movement_path, :class => "btn primary" %>
+</div>
+
+<table id="tableSortMovements" class="zebra-striped">
+<thead>
+  <tr>
+    <th class="brown header">Flow</th>
+    <th class="blue header">Date</th>
+    <th class="green header">Value</th>
+    <th class="yellow header">Observation</th>
+    <th class="red header">Account</th>
+    <th class="header"></th>
+  </tr>
+</thead>
+<tbody>
+<% @movements.each do |movement| %>
+  <tr>
+    <td><%= movement.flow %></td>
+    <td><%= movement.date %></td>
+    <td><%= number_to_currency movement.value %></td>
+    <td><%= movement.observation %></td>
+    <td><%= movement.account.name %></td>
+    <td>
+      <%= link_to 'Edit', edit_movement_path(movement) %>
+      | 
+      <%= link_to 'Destroy', movement, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</tbody>
+</table>

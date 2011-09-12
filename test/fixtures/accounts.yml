@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Investimentos
+  opening_balance: 0.45
+
+two:
+  id: 2
+  name: Conta Corrente
+  opening_balance: 4875.98

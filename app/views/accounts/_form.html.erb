@@ -1,0 +1,31 @@
+<fieldset>
+  <%= form_for(@account) do |f| %>
+    <% if @account.errors.any? %>
+      <div id="error_explanation" class="alert-message block-message error">
+        <% @account.errors.full_messages.each do |msg| %>
+          <p>
+            <strong>
+              * <%= msg %>
+            </strong>
+          </p>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="clearfix">
+      <%= f.label :name %>
+      <div class="input">
+        <%= f.text_field :name, :class => 'xlarge' %>
+      </div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :opening_balance %>
+      <div class="input">
+        <%= f.text_field :opening_balance, :class => 'xlarge currency' %>
+      </div>
+    </div>
+    <div class="actions">
+      <input type="submit" class="btn primary" value="Criar Conta">
+    </div>
+  <% end %>
+</fieldset>

@@ -1,0 +1,39 @@
+<div class="page-header">
+  <h1>Contas</h1>
+</div>
+<% if not notice.nil? %>
+<div class="alert-message block-message success">
+  <p>
+    <strong>
+      <%= notice %>
+    </strong>
+  </p>
+</div>
+<% end %>
+
+<div class="well">
+  <%= link_to 'Adicionar', new_account_path, :class => "btn primary" %>
+</div>
+
+<table id="tableSortAccounts" class="zebra-striped selectable">
+<thead> 
+  <tr>
+    <th class="yellow header">Name</th>
+    <th class="green header">Opening balance</th>
+    <th class="header"></th>
+  </tr>
+</thead> 
+<tbody>
+<% @accounts.each do |account| %>
+  <tr>
+    <td><%= account.name %></td>
+    <td><%= number_to_currency account.opening_balance %></td>
+    <td>
+      <%= link_to 'Edit', edit_account_path(account) %>
+      | 
+      <%= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</tbody>
+</table>

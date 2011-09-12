@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  flow: MyString
+  date: 2011-09-02
+  value: 9.99
+  observation: MyText
+  account_id: 1
+
+two:
+  flow: MyString
+  date: 2011-09-02
+  value: 9.99
+  observation: MyText
+  account_id: 1

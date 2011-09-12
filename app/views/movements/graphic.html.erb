@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>Gráfico de Movimentações</h1>
+</div>
+<!--
+<div class="well">
+<div class="input-append">
+  <input type="text" size="16" name="prependedInput" class="small" />
+  <span class="add-on">#</span>
+  <input type="text" size="16" name="prependedInput" class="small" />
+  <span class="add-on">#</span>
+</div>
+</div>
+-->
+<div class="well">
+  <%= link_to 'Adicionar', new_movement_path, :class => "btn primary" %>
+</div>
+<div class="alert-message block-message info">
+  <div class="box_value_home value_incoming">
+    <p><strong>Entrada</strong></p>
+    <i><strong><%= number_to_currency @total_incoming_value %></strong></i>
+  </div>
+  <div class="value_outcoming">
+    <p><strong>Saída</strong></p>
+    <i><strong><%= number_to_currency @total_outcoming_value %></strong></i>
+  </div>
+</div>
+<img src="<%= @googlechart %>" />
+<br />
+<br />
+<p>* Se você desejar mais detalhes pode consultar os <a href="">gráficos</a>, ou a lista de <a href="">movimentações</a>.<p>
